@@ -6,9 +6,13 @@
  *
  */
 function split(input) {
-   let inputRegex = /[a-z]+|[^a-z]+/gi;
-   return input.match(inputRegex);
+   // let inputRegex = /[a-z]+|[^a-z]+/gi;
+   let number = input.match(/[.\d\/]+/g) || ["1"];
+   let string = input.match(/[a-zA-Z]+/g)[0];
+   return [number[0], string];
+   // return input.match(inputRegex);
 }
+console.log(split("123as"));
 function checkDiv(possibleFraction) {
    let nums = possibleFraction.split("/");
    if (nums.length > 2) {

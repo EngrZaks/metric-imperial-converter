@@ -121,12 +121,16 @@ function ConvertHandler() {
             result = initNum / galToL;
             break;
          case "kg":
-            result = initNum * lbsToKg;
+            result = initNum / lbsToKg;
             break;
          default:
             result = undefined;
       }
-      return parseFloat(result.toFixed(5));
+      let finalResult = parseFloat(result.toFixed(5));
+      // if (unit === "lbs" || unit === "kg") {
+      //    finalResult = parseFloat(result.toFixed(6));
+      // }
+      return finalResult;
    };
 
    this.getString = function (initNum, initUnit, returnNum, returnUnit) {

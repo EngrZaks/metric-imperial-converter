@@ -66,7 +66,7 @@
                   url: "/api/convert",
                   type: "get",
                   data: $("#convertForm").serialize(),
-                  success: function (data) {
+                  success: (data) => {
                      $("#result").text(data.string || data);
                      $("#jsonResult").text(JSON.stringify(data));
                      console.log(data);
